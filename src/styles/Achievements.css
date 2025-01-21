@@ -1,0 +1,31 @@
+.achievements {
+    padding: 60px;
+    background-color: #fffde7;
+    border-radius: 10px;
+  }
+  
+  .achievements h2 {
+    font-size: 2.5rem;
+    color: #fbc02d;
+  }
+  
+  .achievements p {
+    font-size: 1.3rem;
+    margin: 20px 0;
+    color: #f57f17;
+  }
+  
+  .achievements button {
+    background-color: #fbc02d;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .achievements button:hover {
+    background-color: #ffb300;
+  }
+  
