@@ -84,9 +84,58 @@
   transition: 0.3s;
 }
 
-/* Show hamburger on smaller screens */
+
+/* Mobile Specific Styles */
 @media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    background: linear-gradient(45deg, #021c38, #0287ac); 
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    width: 250px; 
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px 0;
+  }
+
+  .navbar-links.active {
+    right: 0; 
+  }
+
+  .navbar-link {
+    color: white;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    transition: transform 0.3s, color 0.3s;
+  }
+
+  .navbar-link:hover {
+    color: #ffcc00; 
+    transform: scale(1.1); 
+  }
+
   .hamburger {
-    display: block;
+    display: block; 
+  }
+
+  .overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 999;
+  }
+
+  .overlay.active {
+    display: block; 
   }
 }
+

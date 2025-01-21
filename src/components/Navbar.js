@@ -11,10 +11,13 @@ const Navbar = () => {
     setMenuActive(!menuActive);
   };
 
+  const closeMenu = () => {
+    setMenuActive(false);
+  };
+
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 50);
 
-    // Highlight active section based on scroll position
     const sections = document.querySelectorAll('section');
     let currentSection = 'home';
 
@@ -42,7 +45,7 @@ const Navbar = () => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      setMenuActive(false); // Close the menu after scrolling
+      closeMenu(); // Close the menu after scrolling
     }
   };
 
@@ -54,14 +57,15 @@ const Navbar = () => {
         <div></div>
         <div></div>
       </div>
+      <div className={`overlay ${menuActive ? 'active' : ''}`} onClick={closeMenu}></div>
       <ul className={`navbar-links ${menuActive ? 'active' : ''}`}>
         {['Home', 'About', 'Events', 'Registration', 'Team', 'Achievements'].map((section) => (
           <li key={section}>
             <a
-              href={`#${section.toLowerCase()}`} // Keeps href for accessibility
+              href={`#${section.toLowerCase()}`}
               className={`navbar-link ${activeSection === section.toLowerCase() ? 'active-link' : ''}`}
               onClick={(e) => {
-                e.preventDefault(); // Prevent default anchor behavior
+                e.preventDefault();
                 scrollToSection(section.toLowerCase());
               }}
             >

@@ -12,6 +12,7 @@ const About = () => {
           empowering students through technology and collaboration. Our mission
           is to create a supportive community where creativity, innovation, and
           learning thrive.
+          Now letss see
         </p>
 
         <h3 className="fade-in">Our Vision</h3>
@@ -60,8 +61,13 @@ const About = () => {
           </div>
         </div>
       </div>
+      
     </section>
   );
 };
+
+
+
+
 
 export default About;

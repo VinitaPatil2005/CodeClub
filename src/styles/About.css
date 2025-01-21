@@ -1,123 +1,209 @@
+/* General Styles */
 .about {
-    position: relative;
-    padding: 50px 20px;
-    background: linear-gradient(to bottom, rgba(65, 63, 63, 0.118), rgba(0, 0, 0, 0.9)),
-      url("../assets/mainbg.png") no-repeat center center/cover;
-    color: #fff;
-    overflow: hidden;
+  position: relative;
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, rgba(162, 156, 156, 0.063), rgba(96, 93, 93, 0)),
+    url("../assets/mainbg.png") no-repeat center center/cover;
+  background-size: cover;
+  color: #fff;
+  overflow: hidden;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.about:hover {
+  transform: scale(1.02);
+}
+
+.about-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(6, 4, 4, 0.714);
+  z-index: 1;
+  animation: fade-in 1.5s ease-in-out;
+}
+
+.about-container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  animation: fade-in 2s ease-in-out;
+}
+
+/* Heading Styles */
+.about h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: slide-in 1s ease-out forwards;
+  color: #ffffff;
+}
+
+.about h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  margin-top: 30px;
+  animation: fade-in 1.5s ease-in-out;
+  color: #f1f1f1;
+}
+
+/* Text and List Styles */
+.about p,
+.about ul {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  animation: fade-in 2s ease-in-out;
+  color: #e0e0e0;
+}
+
+.about ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.about ul li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.about ul li:hover {
+  transform: scale(1.05);
+  color: #4caf50;
+}
+
+.about ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.about ul li:hover::before {
+  color: #ffcc00;
+}
+
+/* Testimonials */
+.testimonials {
+  margin-top: 40px;
+}
+
+.testimonial {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  animation: zoom-in 1s ease-in-out;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.testimonial blockquote {
+  font-style: italic;
+  color: #e0e0e0;
+}
+
+.testimonial cite {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ccc;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 30px 15px;
   }
-  
-  .about-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-  }
-  
+
   .about-container {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-    animation: fade-in 2s ease-in-out;
+    max-width: 100%;
+    margin: 0 10px;
   }
-  
+
   .about h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    animation: slide-in 1s ease-out forwards;
+    font-size: 2.5rem;
   }
-  
+
   .about h3 {
-    font-size: 2rem;
-    margin-top: 30px;
-    animation: fade-in 1.5s ease-in-out;
+    font-size: 1.8rem;
   }
-  
+
   .about p,
   .about ul {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    animation: fade-in 2s ease-in-out;
+    font-size: 1rem;
+    line-height: 1.6;
   }
-  
-  .about ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-  }
-  
+
   .about ul li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-  }
-  
-  .about ul li::before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    color: #4caf50;
-    font-size: 1.2rem;
-  }
-  
-  .testimonials {
-    margin-top: 40px;
-  }
-  
-  .testimonial {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    animation: zoom-in 1s ease-in-out;
-  }
-  
-  .testimonial blockquote {
-    font-style: italic;
-  }
-  
-  .testimonial cite {
+    padding-left: 15px;
     font-size: 0.9rem;
-    font-weight: bold;
-    color: #ccc;
   }
-  
-  /* Animations */
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+
+  .testimonials {
+    margin-top: 30px;
   }
-  
-  @keyframes slide-in {
-    from {
-      transform: translateY(30px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+
+  .testimonial {
+    padding: 15px;
+    margin: 10px 5px;
+    font-size: 0.9rem;
   }
-  
-  @keyframes zoom-in {
-    from {
-      transform: scale(0.9);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1);
-      opacity: 1;
-    }
+
+  .testimonial blockquote {
+    font-size: 0.9rem;
   }
-  
+
+  .testimonial cite {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about h3 {
+    font-size: 1.5rem;
+  }
+
+  .about p,
+  .about ul {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .about ul li {
+    padding-left: 20px;
+    font-size: 0.8rem;
+  }
+
+  .testimonial {
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+  .testimonial blockquote {
+    font-size: 0.8rem;
+  }
+
+  .testimonial cite {
+    font-size: 0.7rem;
+  }
+}
